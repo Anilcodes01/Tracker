@@ -20,6 +20,7 @@ const getBadgeForStreak = (streak: number): BadgeInfo | null => {
 };
 
 const calculateCurrentStreak = (dates: string[]): number => {
+  // adding repo
     if (dates.length === 0) return 0;
     const loggedDatesSet = new Set(dates);
     const sortedDates = [...dates].sort().reverse();
