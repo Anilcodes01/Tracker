@@ -24,3 +24,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+.react-calendar {
+  @apply !w-full !border-none !bg-transparent;
+}
+
+/* Navigation bar (arrows and month label) */
+.react-calendar__navigation {
+  @apply mb-4 flex justify-center items-center;
+}
+.react-calendar__navigation button {
+  @apply !bg-gray-700/50 hover:!bg-gray-600/50 rounded-lg !border-none;
+  min-width: 40px !important;
+  height: 40px;
+}
+.react-calendar__navigation__label {
+  @apply !font-bold !text-xl !text-white flex-grow-0 mx-4;
+}
+
+/* Weekday names */
+.react-calendar__month-view__weekdays__weekday {
+  @apply !text-gray-400 font-semibold uppercase text-sm;
+}
+.react-calendar__month-view__weekdays__weekday abbr {
+  @apply !no-underline; /* Remove underline from weekday letters */
+}
+
+/* Individual day tiles */
+.react-calendar__tile {
+  @apply !text-white rounded-full !flex items-center justify-center h-12 w-12 mx-auto
+         hover:!bg-gray-700/80 transition-colors duration-200;
+}
+
+/* Today's date */
+.react-calendar__tile--now {
+  @apply !bg-gray-700/60 font-bold;
+}
+
+/* Our custom class for logged days */
+.logged-day {
+  @apply !bg-emerald-500 !text-white font-bold shadow-lg shadow-emerald-500/30;
+}
+
+/* Disabled days (outside of the current month) */
+.react-calendar__month-view__days__day--neighboringMonth {
+  @apply !text-gray-600;
+}
